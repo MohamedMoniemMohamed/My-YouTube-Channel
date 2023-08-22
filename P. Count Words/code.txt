@@ -1,0 +1,82 @@
+//#include<bits/stdc++.h>
+#include<iostream>
+#include<iomanip>
+#include<string>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<map>
+#include<stack>
+#include<queue>
+#include<deque>
+#include<bitset>
+//typedef long long ll;
+#define ll long long
+#define db double
+#define endl "\n"
+using namespace std;
+void fast()
+{
+	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+}
+bool ch(char x)
+{
+	if (x >= 'a' && x <= 'z' || x >= 'A' && x <= 'Z')
+		return true;
+	return false;
+}
+int main()
+{
+	// ^_^
+
+	fast();
+	
+
+	string s;
+	getline(cin, s);
+
+	int idx_st, idx_end;
+	idx_st = idx_end = 0;
+	bool st, ed;
+	st = ed = false;
+	int cnt = 0;
+
+	for (int i = 0; i < s.size(); i++)
+	{
+
+		if (ch(s[i]) == true && st == false)
+		{
+			idx_st = i;
+			st = true;
+		}
+		else if (ch(s[i]) == false && st == true)
+		{
+			idx_end= i-1;
+			ed = true;
+		}
+		/////
+		if (ch(s[i]) == true && i == s.size() - 1)
+		{
+			ed = true;
+
+		}
+
+		if (st == ed && st == true)
+		{
+			cnt++;
+			st = ed = false;
+
+		}
+
+
+
+	}
+
+	cout << cnt << endl;
+
+
+
+	//------++++----++---------++++++...+++
+	//the end ^ _ ^ Not endl tststststststs
+}
